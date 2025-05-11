@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,24 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Location piscine Bonneuil</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    header h1, header p {
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+    header h1 { animation-delay: 0.2s; }
+    header p { animation-delay: 0.8s; }
+
+    .swiper {
+      width: 90%;
+      max-width: 1200px;
+      height: 400px;
+      margin: 2rem auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Location de piscine privée à Bonneuil</h1>
+    <h1>Location de 2 espaces d'exception à BONNEUIL SUR MARNE 💎</h1>
+    <p>Espace tout aménagé 80 M2, ultra moderne, cuisine équipée pour vos smahots !🎀<br>
+    À la journée ou en soirée, agréable et épuré pour tous vos types de fêtes : fiançailles, bat mitswa, anniversaires...!💝<br>
+    Environ 50/60 places assises. N'hésitez plus !<br><br>
+    Studio équipé 5 couchages de 45 m2 sur terrasse jardin et piscine avec bel éclairage le soir 💃</p>
     <p>Terrasse et jardin aménagés – Baignade en famille ou soirées – Événements familiaux, EVJF, anniversaires…</p>
   </header>
 
-  <section class="image-section">
-    <img src="assets/piscine.jpg" alt="Piscine à Bonneuil">
-  </section>
-
-  <section class="map">
-    <h2>Localisation</h2>
-    <iframe
-      src="https://www.google.com/maps?q=Bonneuil-sur-Marne&output=embed"
-      width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""
-      aria-hidden="false" tabindex="0"></iframe>
-  </section>
+  <div class="swiper">
+    <h2 style="text-align: center; margin-bottom: 1rem;">Découvrez notre espace piscine et salon moderne</h2>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="assets/optimized/piscine.jpg" alt="Piscine"></div>
+      <div class="swiper-slide"><img src="assets/optimized/image1.jpeg" alt="Intérieur"></div>
+      <div class="swiper-slide"><img src="assets/optimized/image2.jpeg" alt="Intérieur"></div>
+      <div class="swiper-slide"><img src="assets/piscine.jpg" alt="Piscine"></div>
+      <div class="swiper-slide"><img src="assets/image1.jpeg" alt="Intérieur"></div>
+      <div class="swiper-slide"><img src="assets/image2.jpeg" alt="Intérieur"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
 
   <section class="contact">
     <a href="https://wa.me/33662129506" class="whatsapp-button" target="_blank">📱 Réservez sur WhatsApp</a>
@@ -32,5 +67,13 @@
   <footer>
     <p>© 2025 Location piscine Bonneuil. Tous droits réservés.</p>
   </footer>
+
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    });
+  </script>
 </body>
 </html>
